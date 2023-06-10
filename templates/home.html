@@ -19,10 +19,17 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
+        .login-header {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
         h1 {
             text-align: center;
-            margin-bottom: 30px;
-            color: #333333;
+            margin: 0;
+            color: #ffffff;
         }
         
         form {
@@ -44,8 +51,9 @@
             box-sizing: border-box;
         }
         
-        .btn-primary {
-            background-color: #4CAF50;
+        .btn-primary,
+        .btn-homepage {
+            background-color: #4caf50;
             border: none;
             color: white;
             padding: 12px 20px;
@@ -58,6 +66,19 @@
             width: 100%;
         }
         
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+        
+        .homepage-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .homepage-button .btn-homepage {
+            padding: 8px 16px;
+        }
+        
         h2 {
             text-align: center;
             color: #333333;
@@ -67,9 +88,10 @@
 </head>
 <body>
     <div class="login">
-        <h1>Student Exam Performance Indicator</h1>
-        <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <div class="login-header">
             <h1>Student Exam Performance Prediction</h1>
+        </div>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
             <div class="mb-3">
                 <label>Gender</label>
                 <select name="gender" required>
@@ -126,10 +148,15 @@
                 <input type="number" name="writing_score" placeholder="Enter your Writing Score" min="0" max="100" />
             </div>
             <div class="mb-3">
-                <input class="btn btn-primary" type="submit" value="Predict your Math Score" required />
+                <input class="btn btn-primary cta-button" type="submit" value="Predict your Math Score" required />
             </div>
         </form>
         <h2>Prediction: {{results}}</h2>
+    </div>
+    <div class="homepage-button">
+        <a href="/">
+            <button class="btn-homepage cta-button">Go to Homepage</button>
+        </a>
     </div>
 </body>
 </html>
