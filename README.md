@@ -1,2 +1,2 @@
 # Score Prediction System
-End-to-End system to predict student score based of some decision variables using Machine Learning.
+End-to-End Python Machine Learning model and HTML web application for prediction of test scores based on decision variables deployed using AWS Elastic Beanstalk.
